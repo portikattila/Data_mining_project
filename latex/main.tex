@@ -64,15 +64,14 @@
 
 
 \section{Introduction}
-The "cats and dogs" image dataset is one of the best known and most commonly used examples of calcification, and therefore, we already know loads of accurate methods for solving that classification problem.  For me, the most impressive result of machine learning and deep learning is that we are able to create algorithms that can recognize and identify new information based on their earlier experience. I have previously worked on an image classification task, therefore I wanted to make my project a little more interesting. That is why I chose the audio classification, and I found the audio classification version of the cats and dogs classification problem as a Kaggle dataset. (see ~\cite{data})
+The "cats and dogs" image dataset is one of the best known and most commonly used example for the classification, and therefore, we already know loads of accurate methods for solving that classification problem.  For me, the most impressive result of machine learning and deep learning is that we are able to create algorithms that can recognize and identify new information based on their earlier experience. I have previously worked on an image classification task, therefore I wanted to make my project a little more interesting. That is why I chose the audio classification, and I found the audio classification version of the cats and dogs image classification problem, as a Kaggle dataset. (see ~\cite{data})
 
 
-The chosen dataset consists of audio files in "wav" format, and any of these contain dog barking or cat's meow. At first sight, the usability of the dataset was questionable because the data set contains relatively little data, the length of the audio strings is very varied, there are a few poor quality recordings, and the dataset is unbalanced. Examination of the data set shows that there are indeed problems that make classification difficult. But by preprocessing the data and choosing the proper features, they have been solved and achieved relatively well accuracy. 
+The chosen dataset consists of audio files in "wav" format, and any of these contains dog barking or cat's meow. At first sight, the usability of the dataset was questionable because the data set contains relatively little data, the length of the audio strings is very varied, there are a few poor quality recordings, and the dataset is unbalanced. Examination of the data set shows that there are indeed problems that make classification difficult. But by preprocessing the data and choosing the proper features, they have been solved and achieved relatively well accuracy. 
 
 \section{The dataset}
 
-The chosen dataset contains at all 277 audio files at all, in wav format. The .wav files are used for storing uncompressed audio bitstreams. By checking the database soon revealed that some of the files were completely unusable, which I removed from the database. 
-Here the unusable samples do not mean the noisy poor-quality recordings or which contains other sounds (like human speech). I use these recordings since the sound-recognizing in the presence of ambient noise is considered part of the task. There were audio files with completely different content. I found and removed ten such files from the data set. That solved the first part of the problem. The other big problem is that the data set contained far more samples from cats than from dogs. However, the data set does not contain too many samples, so it is not possible to easily balance it by omitting some samples. I was able to find another dataset that contains recorded dog barking (see ~\cite{data2}).  Adding these to the original data set, I get two classes of roughly the same size (see FIG. ~\ref{fig1}). 
+The chosen dataset contains at all 277 audio files at all, in wav format. The .wav files are used for storing uncompressed audio bit-streams. By checking the database soon revealed that some of the files were completely unusable, which I removed. Here the unusable samples do not mean the noisy poor-quality recordings or which contains other sounds (like human speech). I use these recordings since the sound-recognizing in the presence of ambient noise is considered as the part of the task. The problem was that there were audio files with completely different content. I found and removed ten such files from the data set. That solved the first part of the problem. The other big issue was that the data set contained far more samples from cats than from dogs. However, the data set does not contain too many samples, so it was not possible to easily balance it by omitting some samples. I was able to find another dataset that contains recorded dog barking (see ~\cite{data2}).  Adding these to the original data set, I get two classes of roughly the same size (see FIG. ~\ref{fig1}). 
 
 \begin{figure}[H]
 \centering
@@ -81,7 +80,7 @@ Here the unusable samples do not mean the noisy poor-quality recordings or which
 \label{fig1}
 \end{figure}
 
-I used the SciPy (scipy.io.wavfile.read) python package to load the audio files and create a data frame. This loads any raw audio files in which data is stored as pulse-code modulation values. As the input, we get the time series of the amplitudes and sampling rate of the wav file. Two random examples for the sampled signal are shown in figure ~\ref{fig2}.
+I used the SciPy (scipy.io.wavfile.read) python package to load the audio files and create NumPy arrays from those. This loads any raw audio files in which data is stored as pulse-code modulation values. As the input, we get the time series of the amplitudes and sampling rate of the .wav file. Two random examples for the sampled signal are shown in figure ~\ref{fig2}.
 
 \begin{figure}[H]
 \centering
@@ -102,12 +101,11 @@ The last difficulty with the dataset is the variety of the lengths of its elemen
 
 \section{Features}
 
-A commonly used method in audio classification is to calculate the spectrum of audio samples. Then one teach convolutional neural networks on the spectra as image-like data, thus creating a model that can perform the classification. The problem is that, as I mentioned above, the samples in the given dataset are not equal in length thus the spectra would not be equal in size.  One way to solve the problem is to take the time average of the spectra as features. At the same time, this solution, give the opportunity to use other machine learning methods instead of convolutional neural networks. In the next part, I will present the features that I used for the classification. 
-I tried to choose properties of the samples that are different for the two classes so that the classification can be done based on them. To manage the audio data and calculate its properties, I used the functions of librosa, which is a python package for music and audio analysis. The python notebook that contains the solution codes is available at this GitHub repository: \cite{repo}.
+A commonly used method in audio classification is to calculate the spectrum of audio samples. Then one can train convolutional neural networks on the spectra as image-like data, thus creating a model that can perform the classification. The problem is that, as I mentioned above, the samples in the given dataset are not equal in length thus the spectra would not be equal in size.  One way to solve the problem is to take the time average of the spectra as features. At the same time, this solution, give the opportunity to use other machine learning methods instead of convolutional neural networks. In the next part, I will present the features that I used for the classification. I tried to choose properties of the samples that are significantly different for the two classes so that the classification can be done based on them. To manage the audio data and calculate its properties, I used the functions of librosa, which is a python package for music and audio analysis. The python notebook that contains the codes is available at this GitHub repository: \cite{repo}.
  
 \subsection{The mel-spectrogram}
 
-The most important features come from the mean values of the mel-frequency cepstral coefficients. The mel-frequency cepstral coefficients collectively make up the mel-frequency cepstrum (a cepstrum is a spectrum of the log of the spectrum of the time signal), which is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency. The motivation of the usage of the mel scale is in that how the hearing works.  Humans perceive sound logarithmically, thus, the mel scale was introduced. It is a logarithmic scale based on the principle that equal distances on the scale have the same perceptual distance. The following figure presents a typical mel spectrogram for each class (see FIG. ~\ref{fig4}). On these, it is obvious the difference between the two types of sound, this suggests that the mel diagram will have a crucial role in the classification.
+The most important features come from the mean values of the mel-frequency cepstral coefficients. The mel-frequency cepstral coefficients collectively make up the mel-frequency cepstrum (a cepstrum is a spectrum of the logarithm of the spectrum of the time signal), which is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a non-linear mel scale of frequency. The motivation of the usage of the mel scale is in that how the hearing works.  Humans perceive sound logarithmically, thus, the mel scale was introduced. It is a logarithmic scale based on the principle that equal distances on the scale have the same perceptual distance. The following figure presents a typical mel spectrogram for each class (see FIG. ~\ref{fig4}). On these, it is obvious the difference between the two types of sound, this suggests that the mel diagram will have a crucial role in the classification.
 
 \begin{figure}[H]
 \centering
@@ -115,18 +113,18 @@ The most important features come from the mean values of the mel-frequency cepst
 \caption{Typical mel spectrograms for each class.}
 \label{fig4}
 \end{figure}
-Cased, the mentioned problems we can't use directly the mel spectrograms, but their time average (see FIG. ~\ref{fig5}).
+Cased, the mentioned problems we can not use directly the mel-spectrograms, but their time average (see FIG. ~\ref{fig5}).
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.99\textwidth]{fig/mel_pro.pdf}
-\caption{Typical mean of mel spectrogram.}
+\caption{Typical mean of mel-spectrogram.}
 \label{fig5}
 \end{figure}
 
 \subsection{The tempogram and tempo}
 
-The next used feature is the mean tempogram (see FIG. ~\ref{fig6}).  The tempogram is similar to a spectrogram, it is the time-tempo (beats per minute) representation for a given time-dependent signal. As previously, we first calculate the tempogram, then take its time average. The global tempo of the signal also can be estimated via libros, thus I try to use it as a feature.
+The next feature is the mean tempogram (see FIG. ~\ref{fig6}).  The tempogram is similar to a spectrogram, it is the time-tempo (beats per minute) representation for a given time-dependent signal. As previously, we first calculate the tempogram, then take its time average. The global tempo of the signal also can be estimated via libros, thus I try to use it as a feature.
 
 \begin{figure}[H]
 \centering
@@ -136,6 +134,7 @@ The next used feature is the mean tempogram (see FIG. ~\ref{fig6}).  The tempogr
 \end{figure}
 
 \subsection{The spectral centroid and bandwidth}
+
 The Spectral Centroid is the centre of gravity of the magnitude spectrum. It defines the frequency band where most of the energy is concentrated. The spectral bandwidth is the variance from the spectral centroid. It marks the spectral range of interest around the centroid(see FIG. ~\ref{fig7}). 
 
 \begin{figure}[H]
@@ -157,13 +156,14 @@ The zero-crossing rate is one of the most basic, commonly used features of the a
 \end{figure}
 
 
-To accomplish the classification task, I used the enumerated features or part of these. There are seven different feature types, these mean 261 features at all (the image like features has 128 components).
+To accomplish the classification task, I used the enumerated features. There are seven different feature types, these mean 261 features at all (the image like features has 128 components).
 
 \section{Classification}
 
-Because this is a relatively small dataset for binary classification, I am able to try a variety of classification methods. Therefore,  I applied all the suitable methods that made part of the course. And I am going to present the models, which give the highest accuracy. The original dataset makes part of a kaggle event, where the best accuracy of the submitted results is about 90 \%. Therefore, my goal is at least to reach that accuracy. For compactness, I will not present the theoretical background of the models since that has happened during the semester. For the classification, I used a 0.8/0.2 train-test split on the standard scaled and normalized dataset.
+Because this is a relatively small dataset for binary classification, I am able to try a variety of classification methods. Therefore,  I applied all the suitable methods that made part of the course. And I am going to present the models, which give the highest accuracy. The original dataset makes part of a kaggle event, where the best accuracy of the submitted results is about 90 \%. Therefore, my goal is at least to reach that accuracy. For compactness, I will not present the theoretical background of the models since that has happened during the semester. For the classification, I used a 0.8/0.2 train-test split, and standard scaling and normalization where it is required.
 
 \subsection{Decision tree and random forest classifier}
+
 First, I tried the random forest and decision tree models. I personally like these models, because both instantly give some impression about the importance of the different features. The visualization of the first layers of the tree and the most important features are in figure \ref{fig9}.
 
 \begin{figure}[H]
@@ -177,7 +177,7 @@ For binary classification, the confusion matrix well describes the accuracy of t
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{fig/conf1.pdf}
-\caption{It is the confusion matrix of the predicted class by the decision tree classifier (left) and by the random forest classifier (right). I used both classifiers with the default parameters.   In the case of the decision tree, the accuracy was 90.32 \%. And in the case of the random forest, the test accuracy was 93.55 \%.}
+\caption{The confusion matrix of the predicted class by the decision tree classifier (left) and by the random forest classifier (right). I used both classifiers with the default parameters.   In the case of the decision tree, the accuracy was 90.32 \%. And in the case of the random forest, the test accuracy was 93.55 \%.}
 \label{fig8}
 \end{figure}
 
@@ -196,12 +196,13 @@ Over 50 epochs, the validation accuracy became higher than 95 \%. The loss funct
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{fig/conf2.pdf}
-\caption{It is the loss as a function of the number of epochs (left) and the confusion matrix of the prediction (right). The test accuracy was 95.16\%.}
+\caption{The loss as a function of the number of epochs (left) and the confusion matrix of the prediction (right). The test accuracy was 95.16\%.}
 \label{fig9}
 \end{figure}
 
 \section{Discussion}
-In the current project, I managed to prepare and complete a small audio dataset for binary classification. I did preprocess on the dataset to create usable samples. I was looking for commonly used audio features in machine learning. I collected the most proper features for our specific classification task. Then, I used librosa and sklearn to create a dataset consisting of the same finite number of features for all samples.  By applying the learned methods, I created and trained three models (two classical learning and one fully connected neural network model) to classify the test dataset with accuracy higher than 90 per cent. The last figure shows the ROC curve of the different classifications and the corresponding AUC scores(see FIG. ~\ref{fig10}).
+
+In the current project, I managed to prepare and complete a small audio dataset for binary classification. I did preprocess on the dataset to create usable samples. I was looking for commonly used audio features in machine learning. I collected the most proper features for our specific classification task. Then, I used librosa and sklearn to create a dataset consisting of the same finite number of features for all samples.  By applying the learned methods, I created and trained three models (two classical learning and one fully connected neural network model) to classify the test dataset with accuracy higher than 90 percent. The last figure shows the ROC curve of the different classifications and the corresponding AUC scores(see FIG. ~\ref{fig10}).
 
 \begin{figure}[H]
 \centering
@@ -221,7 +222,7 @@ In the current project, I managed to prepare and complete a small audio dataset 
 
 \bibitem{3} \href{https://devopedia.org/audio-feature-extraction}{Devopedia. 2021. - Audio Feature Extraction.}
 
-\bibitem{4} \href{https://github.com/portikattila/Data_mining_project}{Data mining GitHub repository}
+\bibitem{repo} \href{https://github.com/portikattila/Data_mining_project}{Data mining project -- GitHub repository}
 
 \end{thebibliography}
 

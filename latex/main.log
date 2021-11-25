@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.25)  25 NOV 2021 14:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.25)  25 NOV 2021 14:59
 entering extended mode
 **./main.tex
 (main.tex
@@ -546,7 +546,7 @@ LaTeX Info: Redefining \nameref on input line 57.
 <fig/ration.pdf, id=50, 668.88335pt x 324.94525pt>
 File: fig/ration.pdf Graphic file (type pdf)
 <use fig/ration.pdf>
-Package pdftex.def Info: fig/ration.pdf  used on input line 79.
+Package pdftex.def Info: fig/ration.pdf  used on input line 78.
 (pdftex.def)             Requested size: 377.85419pt x 183.5597pt.
  [1
 
@@ -554,36 +554,33 @@ Package pdftex.def Info: fig/ration.pdf  used on input line 79.
 <fig/example.pdf, id=64, 1339.15933pt x 362.96228pt>
 File: fig/example.pdf Graphic file (type pdf)
 <use fig/example.pdf>
-Package pdftex.def Info: fig/example.pdf  used on input line 88.
+Package pdftex.def Info: fig/example.pdf  used on input line 87.
 (pdftex.def)             Requested size: 467.59538pt x 126.73409pt.
 <fig/all.jpg, id=66, 1254.6875pt x 362.35374pt>
 File: fig/all.jpg Graphic file (type jpg)
 <use fig/all.jpg>
-Package pdftex.def Info: fig/all.jpg  used on input line 96.
+Package pdftex.def Info: fig/all.jpg  used on input line 95.
 (pdftex.def)             Requested size: 467.59538pt x 135.0419pt.
  [2 <./fig/ration.pdf> <./fig/example.pdf
 
 pdfTeX warning: pdflatex (file ./fig/example.pdf): PDF inclusion: multiple pdfs
  with page group included in a single page
 > <./fig/all.jpg>]
-
-LaTeX Warning: Citation `repo' on page 3 undefined on input line 106.
-
-<fig/mel.pdf, id=132, 1182.08092pt x 369.95717pt>
+<fig/mel.pdf, id=133, 1182.08092pt x 369.95717pt>
 File: fig/mel.pdf Graphic file (type pdf)
 <use fig/mel.pdf>
-Package pdftex.def Info: fig/mel.pdf  used on input line 114.
+Package pdftex.def Info: fig/mel.pdf  used on input line 112.
 (pdftex.def)             Requested size: 467.59538pt x 146.34315pt.
-[3]
-<fig/mel_pro.pdf, id=141, 1198.39284pt x 369.95717pt>
+ [3]
+<fig/mel_pro.pdf, id=142, 1198.39284pt x 369.95717pt>
 File: fig/mel_pro.pdf Graphic file (type pdf)
 <use fig/mel_pro.pdf>
-Package pdftex.def Info: fig/mel_pro.pdf  used on input line 122.
+Package pdftex.def Info: fig/mel_pro.pdf  used on input line 120.
 (pdftex.def)             Requested size: 467.59538pt x 144.35045pt.
-<fig/tempogram.pdf, id=143, 1149.23947pt x 369.95717pt>
+<fig/tempogram.pdf, id=144, 1149.23947pt x 369.95717pt>
 File: fig/tempogram.pdf Graphic file (type pdf)
 <use fig/tempogram.pdf>
-Package pdftex.def Info: fig/tempogram.pdf  used on input line 133.
+Package pdftex.def Info: fig/tempogram.pdf  used on input line 131.
 (pdftex.def)             Requested size: 467.59538pt x 150.52617pt.
  [4 <./fig/mel.pdf> <./fig/mel_pro.pdf
 
@@ -594,27 +591,27 @@ pdfTeX warning: pdflatex (file ./fig/mel_pro.pdf): PDF inclusion: multiple pdfs
 pdfTeX warning: pdflatex (file ./fig/tempogram.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
 >]
-<fig/cen_band.pdf, id=287, 1217.35602pt x 333.82217pt>
+<fig/cen_band.pdf, id=288, 1217.35602pt x 333.82217pt>
 File: fig/cen_band.pdf Graphic file (type pdf)
 <use fig/cen_band.pdf>
-Package pdftex.def Info: fig/cen_band.pdf  used on input line 143.
+Package pdftex.def Info: fig/cen_band.pdf  used on input line 142.
 (pdftex.def)             Requested size: 467.59538pt x 128.22394pt.
-<fig/zer_root.pdf, id=288, 1212.55684pt x 333.82217pt>
+<fig/zer_root.pdf, id=289, 1212.55684pt x 333.82217pt>
 File: fig/zer_root.pdf Graphic file (type pdf)
 <use fig/zer_root.pdf>
-Package pdftex.def Info: fig/zer_root.pdf  used on input line 154.
+Package pdftex.def Info: fig/zer_root.pdf  used on input line 153.
 (pdftex.def)             Requested size: 467.59538pt x 128.7333pt.
  [5 <./fig/cen_band.pdf> <./fig/zer_root.pdf
 
 pdfTeX warning: pdflatex (file ./fig/zer_root.pdf): PDF inclusion: multiple pdf
 s with page group included in a single page
 >]
-<fig/features.pdf, id=373, 1243.32008pt x 606.6414pt>
+<fig/features.pdf, id=374, 1243.32008pt x 606.6414pt>
 File: fig/features.pdf Graphic file (type pdf)
 <use fig/features.pdf>
 Package pdftex.def Info: fig/features.pdf  used on input line 171.
 (pdftex.def)             Requested size: 467.59538pt x 228.14717pt.
-<fig/conf1.pdf, id=375, 1214.71945pt x 542.49005pt>
+<fig/conf1.pdf, id=376, 1214.71945pt x 542.49005pt>
 File: fig/conf1.pdf Graphic file (type pdf)
 <use fig/conf1.pdf>
 Package pdftex.def Info: fig/conf1.pdf  used on input line 179.
@@ -624,20 +621,17 @@ Package pdftex.def Info: fig/conf1.pdf  used on input line 179.
 pdfTeX warning: pdflatex (file ./fig/conf1.pdf): PDF inclusion: multiple pdfs w
 ith page group included in a single page
 >]
-<fig/conf2.pdf, id=470, 927.68922pt x 358.91592pt>
+<fig/conf2.pdf, id=471, 927.68922pt x 358.91592pt>
 File: fig/conf2.pdf Graphic file (type pdf)
 <use fig/conf2.pdf>
 Package pdftex.def Info: fig/conf2.pdf  used on input line 198.
 (pdftex.def)             Requested size: 377.85419pt x 146.1926pt.
-<fig/ROC.pdf, id=472, 630.47421pt x 606.6414pt>
+<fig/ROC.pdf, id=473, 630.47421pt x 606.6414pt>
 File: fig/ROC.pdf Graphic file (type pdf)
 <use fig/ROC.pdf>
-Package pdftex.def Info: fig/ROC.pdf  used on input line 208.
+Package pdftex.def Info: fig/ROC.pdf  used on input line 209.
 (pdftex.def)             Requested size: 283.39244pt x 272.68063pt.
  [7 <./fig/conf2.pdf>] [8 <./fig/ROC.pdf>] (main.aux)
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -645,23 +639,22 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 380CB34D7009A6B1DC8E4B8FDC751865;1915.
  ) 
 Here is how much of TeX's memory you used:
- 12881 strings out of 478907
- 194907 string characters out of 2851891
- 524364 words of memory out of 3000000
- 30529 multiletter control sequences out of 15000+600000
- 412230 words of font info for 46 fonts, out of 8000000 for 9000
+ 12879 strings out of 478907
+ 194891 string characters out of 2851891
+ 524367 words of memory out of 3000000
+ 30528 multiletter control sequences out of 15000+600000
+ 411454 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,7n,81p,982b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,7n,81p,1121b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\attil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
 1200.pk> <C:\Users\attil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecbx1000.pk> <C:\Users\attil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm1000.pk> <C:\Users\attil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecbx1440.pk> <C:\Users\attil\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\attil\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm1728.pk>
-Output written on main.pdf (8 pages, 953677 bytes).
+0\ecrm1000.pk> <C:\Users\attil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecbx1440.pk> <C:\Users\attil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecrm1200.pk> <C:\Users\attil\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm1728.pk>
+Output written on main.pdf (8 pages, 953718 bytes).
 PDF statistics:
- 788 PDF objects out of 1000 (max. 8388607)
+ 786 PDF objects out of 1000 (max. 8388607)
  42 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 
