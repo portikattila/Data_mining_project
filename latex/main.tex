@@ -103,7 +103,7 @@ The last difficulty with the dataset is the variety of the lengths of its elemen
 \section{Features}
 
 A commonly used method in audio classification is to calculate the spectrum of audio samples. Then one teach convolutional neural networks on the spectra as image-like data, thus creating a model that can perform the classification. The problem is that, as I mentioned above, the samples in the given dataset are not equal in length thus the spectra would not be equal in size.  One way to solve the problem is to take the time average of the spectra as features. At the same time, this solution, give the opportunity to use other machine learning methods instead of convolutional neural networks. In the next part, I will present the features that I used for the classification. 
-I tried to choose properties of the samples that are different for the two classes so that the classification can be done based on them. To manage the audio data and calculate its properties, I used the functions of librosa, which is a python package for music and audio analysis. The main parts of the corresponding codes can be found in the appendix.
+I tried to choose properties of the samples that are different for the two classes so that the classification can be done based on them. To manage the audio data and calculate its properties, I used the functions of librosa, which is a python package for music and audio analysis. The python notebook that contains the solution codes is available at this GitHub repository: \cite{repo}.
  
 \subsection{The mel-spectrogram}
 
@@ -224,10 +224,6 @@ In the current project, I managed to prepare and complete a small audio dataset 
 \end{thebibliography}
 
 
-\begin{appendices}
-\chapter{Some Appendix}
-The contents...
-\end{appendices}  
 \end{document}
 
 
