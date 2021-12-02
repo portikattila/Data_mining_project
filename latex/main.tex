@@ -170,15 +170,18 @@ First, I tried the random forest and decision tree models. I personally like the
 \centering
 \includegraphics[width=0.99\textwidth]{fig/features.pdf}
 \caption{The most important features for random forest classifier (left) and first 2 layers of the decision tree classifier.}
-\label{fig8}
+\label{fig9}
 \end{figure}
-For binary classification, the confusion matrix well describes the accuracy of the model (see FIG.  \ref{fig9}).
+As we expected based on the visualisation, the most features are the spectral bandwidth and the elements of the mel spectrogram. If we look at the figures in the previous section, it is clear that these features contain crucial information from the viewpoint of the classification.
+
+
+For binary classification, the confusion matrix well describes the accuracy of the model (see FIG.  \ref{fig10}).
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{fig/conf1.pdf}
+\includegraphics[width=0.7\textwidth]{fig/conf1.pdf}
 \caption{The confusion matrix of the predicted class by the decision tree classifier (left) and by the random forest classifier (right). I used both classifiers with the default parameters.   In the case of the decision tree, the accuracy was 90.32 \%. And in the case of the random forest, the test accuracy was 93.55 \%.}
-\label{fig8}
+\label{fig10}
 \end{figure}
 
 \section{Fully connected neural networks}
@@ -191,24 +194,24 @@ Besides the classical learning algorithms, I tried to train a fully connected ne
 \item Dense \#3 (output layer): 1 neuron, sigmoid activation
 \item[-]  loss: binary cross entropy, metrics: AUC and accuracy, Adam optimizer
 \end{enumerate}
-Over 50 epochs, the validation accuracy became higher than 95 \%. The loss function and confusion matrix is presented in figure ~\ref{fig9}.
+Over 50 epochs, the validation accuracy became higher than 95 \%. The loss function and confusion matrix is presented in figure ~\ref{fig11}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{fig/conf2.pdf}
 \caption{The loss as a function of the number of epochs (left) and the confusion matrix of the prediction (right). The test accuracy was 95.16\%.}
-\label{fig9}
+\label{fig11}
 \end{figure}
 
 \section{Discussion}
 
-In the current project, I managed to prepare and complete a small audio dataset for binary classification. I did preprocess on the dataset to create usable samples. I was looking for commonly used audio features in machine learning. I collected the most proper features for our specific classification task. Then, I used librosa and sklearn to create a dataset consisting of the same finite number of features for all samples.  By applying the learned methods, I created and trained three models (two classical learning and one fully connected neural network model) to classify the test dataset with accuracy higher than 90 percent. The last figure shows the ROC curve of the different classifications and the corresponding AUC scores(see FIG. ~\ref{fig10}).
+In the current project, I managed to prepare and complete a small audio dataset for binary classification. I did preprocess on the dataset to create usable samples. I was looking for commonly used audio features in machine learning. I collected the most proper features for our specific classification task. Then, I used librosa and sklearn to create a dataset consisting of the same finite number of features for all samples.  By applying the learned methods, I created and trained three models (two classical learning and one fully connected neural network model) to classify the test dataset with accuracy higher than 90 percent. The last figure shows the ROC curve of the different classifications and the corresponding AUC scores (see FIG. ~\ref{fig12}).
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{fig/ROC.pdf}
 \caption{The corresponding ROC curves and AUC scores to the three classifier models: decision tree, random forest, fully connected neutral network.}
-\label{fig10}
+\label{fig12}
 \end{figure}
 
 \begin{thebibliography}{6}
